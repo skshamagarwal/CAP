@@ -25,11 +25,11 @@ def target(request):
     
     result = rf.tree(data_patient, 0, 0)
     if result == 1:
-        color = 'green'
-        messages.info(request,'Patient has very low chances of suffering from any Cardiovascular Disease at the moment :D')
-    else:
         color = 'red'
         messages.info(request,'Patient has high chances of suffering from Cardiovascuar Disease. Please consult an doctor ASAP!!')
+    else:
+        color = 'green'
+        messages.info(request,'Patient has very low chances of suffering from any Cardiovascular Disease at the moment :D')
     
     object = {"color": color}
     return render(request, 'index.html', object)
