@@ -1,0 +1,149 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body class="{{color}}">
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        {{ message }}
+        {% endfor %}
+        <br>
+        <br>
+        <a class="check-again" href="/">Check Again</a>
+        {% else %}
+        <div class="title">Enter Your Details</div>
+        <div class="content">
+            <form action="/target/" method="POST">
+                {% csrf_token %}
+                <!-- age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal,target -->
+                <div class="user-details">
+                    <!-- age -->
+                    <div class="input-box">
+                        <span class="details">Age</span>
+                        <input type="text" placeholder="Enter your Age" name="age" autocomplete="off" required>
+                    </div>
+                    <!-- sex -->
+                    <div class="input-box">
+                        <span class="details">Gender</span>
+                        <select name="sex">
+                            <option>--------</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+                    <!-- cp -->
+                    <div class="input-box">
+                        <span class="details">Chest Pain Type</span>
+                        <select name="cp">
+                            <option>--------</option>
+                            <option value="0">Typical angina</option>
+                            <option value="1">Atypical angina</option>
+                            <option value="2">Non-anginal pain</option>
+                            <option value="3">Asymptomatic</option>
+                        </select>
+                    </div>
+                    <!-- trestbps -->
+                    <div class="input-box">
+                        <span class="details">Resting Blood Pressure (in mm Hg) </span>
+                        <input autocomplete="off" type="text" name="trestbps" placeholder="Enter Resting Blood Pressure"
+                            required>
+                    </div>
+                    <!-- chol -->
+                    <div class="input-box">
+                        <span class="details">Serum Cholestoral (in mg/dl) </span>
+                        <input autocomplete="off" type="text" name="chol" placeholder="Enter Serum Cholestoral"
+                            required>
+                    </div>
+                    <!-- fbs -->
+                    <div class="input-box">
+                        <span class="details">Fasting Blood Sugar > 120 mg/dl</span>
+                        <select name="fbs">
+                            <option>--------</option>
+                            <option value="1">True</option>
+                            <option value="0">False</option>
+
+
+                        </select>
+                    </div>
+                    <!-- restecg -->
+                    <div class="input-box">
+                        <span class="details">Resting Electrocardiographic</span>
+                        <select name="restecg">
+                            <option>--------</option>
+                            <option value="0">Normal</option>
+                            <option value="1">Having ST-T wave abnormality</option>
+                            <option value="2">Definite left ventricular Estes' criteria </option>
+
+                        </select>
+
+                    </div>
+                    <!-- thalach -->
+                    <div class="input-box">
+                        <span class="details">Maximum Heart Rate</span>
+                        <input autocomplete="off" type="text" name="thalach"
+                            placeholder="Enter Maximum Heart Rate Achieved" required>
+                    </div>
+                    <!-- oldpeak -->
+                    <div class="input-box">
+                        <span class="details">ST depression</span>
+                        <input autocomplete="off" type="text" name="oldpeak" placeholder="Enter Resting Blood Pressure"
+                            required>
+                    </div>
+                    <!-- slope -->
+                    <div class="input-box">
+                        <span class="details">ST segment</span>
+                        <select name="slope">
+                            <option>--------</option>
+                            <option value="0">upsloping</option>
+                            <option value="1">flat</option>
+                            <option value="2">downsloping</option>
+                        </select>
+                    </div>
+                    <!-- ca -->
+                    <div class="input-box">
+                        <span class="details">Number of Major Vessels</span>
+                        <select name="ca">
+                            <option>--------</option>
+                            <option value="0">1</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                        </select>
+                    </div>
+                    <!-- thal -->
+                    <div class="input-box">
+                        <span class="details">Thal</span>
+                        <select name="thal">
+                            <option>--------</option>
+                            <option value="1">Normal</option>
+                            <option value="2">Fixed defect</option>
+                            <option value="3">Reversable defect</option>
+                        </select>
+                    </div>
+                    <!-- exang -->
+                    <div class="input-box">
+                        <span class="details">Exercise induced angina</span>
+                        <select name="exang">
+                            <option>--------</option>
+                            <option value="1">YES</option>
+                            <option value="0">NO</option>
+
+                        </select>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Check">
+                </div>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
