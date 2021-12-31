@@ -3,7 +3,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
+  <a href="https://github.com/skshamagarwal/CAP">
     <img src="https://miro.medium.com/max/604/1*6WGnPZ5lkiT2QgK-JP1DFw.png" alt="Logo" height="80">
   </a>
 
