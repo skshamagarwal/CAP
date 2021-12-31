@@ -13,7 +13,7 @@
     An awesome Heart Attack Prediction application using Machine Learning Techniques!
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://drive.google.com/file/d/1vKl6QniQEvveoZ0M93NccAAaVvo8Bpme/view?usp=sharing"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://mycap.herokuapp.com/">View Demo</a>
